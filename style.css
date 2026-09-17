@@ -1,0 +1,5213 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
+
+:root {
+
+    --bg: #06120d;
+    --bg2: #0a1912;
+    --card: #0e2117;
+
+    --lime: #c7ff38;
+
+    --cream: #f4f2df;
+
+    --muted: #a8b3aa;
+
+    --line: rgba(244,242,223,.12);
+
+    --max: 1280px;
+
+}
+
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        'DM Sans',
+        sans-serif;
+
+    background:
+        var(--bg);
+
+    color:
+        var(--cream);
+
+    line-height:
+        1.6;
+
+    overflow-x:
+        hidden;
+
+}
+
+
+body.menu-open {
+
+    overflow:
+        hidden;
+
+}
+
+
+a {
+
+    text-decoration:
+        none;
+
+    color:
+        inherit;
+
+}
+
+
+img {
+
+    width:
+        100%;
+
+    display:
+        block;
+
+}
+
+
+button,
+input,
+textarea {
+
+    font:
+        inherit;
+
+}
+
+
+.container {
+
+    width:
+        min(
+            var(--max),
+            calc(100% - 72px)
+        );
+
+    margin:
+        auto;
+
+}
+
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.site-header {
+
+    height:
+        104px;
+
+    background:
+        rgba(5,15,10,.94);
+
+    border-bottom:
+        1px solid var(--line);
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        1000;
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.nav {
+
+    height:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+}
+
+
+.logo {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        32px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -1.5px;
+
+}
+
+
+.logo span {
+
+    color:
+        var(--lime);
+
+    font-style:
+        italic;
+
+}
+
+
+.nav-links {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        38px;
+
+}
+
+
+.nav-links a {
+
+    font-size:
+        13px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .08em;
+
+    color:
+        #c5ccc5;
+
+    transition:
+        .25s;
+
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+
+    color:
+        var(--lime);
+
+}
+
+
+.nav-actions {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+}
+
+
+.icon-btn {
+
+    display:
+        none;
+
+    border:
+        0;
+
+    background:
+        none;
+
+    color:
+        var(--cream);
+
+    font-size:
+        24px;
+
+    cursor:
+        pointer;
+
+}
+
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.eyebrow {
+
+    display:
+        inline-block;
+
+    color:
+        var(--lime);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .2em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.section {
+
+    padding:
+        110px 0;
+
+}
+
+
+.section-title {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(44px,5vw,78px);
+
+    line-height:
+        .95;
+
+    letter-spacing:
+        -.045em;
+
+}
+
+
+.section-title em {
+
+    color:
+        var(--lime);
+
+    font-weight:
+        600;
+
+}
+
+
+.section-head {
+
+    display:
+        flex;
+
+    align-items:
+        end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        40px;
+
+    margin-bottom:
+        50px;
+
+}
+
+
+.section-head p {
+
+    max-width:
+        420px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+}
+
+
+.btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        13px 21px;
+
+    background:
+        var(--lime);
+
+    color:
+        #08120b;
+
+    border:
+        1px solid var(--lime);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .08em;
+
+    transition:
+        .3s;
+
+}
+
+
+.btn:hover {
+
+    background:
+        transparent;
+
+    color:
+        var(--lime);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+
+/* =====================================================
+   HOME HERO
+===================================================== */
+
+.hero {
+
+    min-height:
+        calc(100vh - 104px);
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+
+    background:
+        #07140d;
+
+}
+
+
+.hero-media {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+}
+
+
+.hero-media img {
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center;
+
+}
+
+
+.hero-media:after {
+
+    content:
+        '';
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,13,8,.88) 0%,
+            rgba(3,13,8,.48) 48%,
+            rgba(3,13,8,.12) 100%
+        );
+
+}
+
+
+.hero-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        760px;
+
+    padding:
+        90px 0;
+
+}
+
+
+.hero h1 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(58px,8vw,120px);
+
+    line-height:
+        .86;
+
+    letter-spacing:
+        -.06em;
+
+    margin:
+        22px 0 28px;
+
+}
+
+
+.hero h1 em {
+
+    color:
+        var(--lime);
+
+}
+
+
+.hero p {
+
+    max-width:
+        500px;
+
+    color:
+        #d5dcd4;
+
+    font-size:
+        16px;
+
+    margin-bottom:
+        32px;
+
+}
+
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.product-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        14px;
+
+}
+
+
+.product-card {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--line);
+
+    overflow:
+        hidden;
+
+}
+
+
+.product-card .pic {
+
+    height:
+        310px;
+
+    background:
+        #f3f1e8;
+
+    overflow:
+        hidden;
+
+}
+
+
+.product-card img {
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        .5s;
+
+}
+
+
+.product-card:hover img {
+
+    transform:
+        scale(1.06);
+
+}
+
+
+.product-info {
+
+    padding:
+        18px;
+
+}
+
+
+.product-info h3 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        22px;
+
+}
+
+
+.product-info p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    margin:
+        3px 0 13px;
+
+}
+
+
+.price-row {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+}
+
+
+.price {
+
+    color:
+        var(--lime);
+
+    font-weight:
+        700;
+
+}
+
+
+.small-btn {
+
+    border:
+        1px solid var(--lime);
+
+    background:
+        transparent;
+
+    color:
+        var(--lime);
+
+    padding:
+        8px 11px;
+
+    font-size:
+        11px;
+
+    cursor:
+        pointer;
+
+    transition:
+        .25s;
+
+}
+
+
+.small-btn:hover {
+
+    background:
+        var(--lime);
+
+    color:
+        #08120b;
+
+}
+
+
+
+/* =====================================================
+   DARK IMAGE SECTION
+===================================================== */
+
+.dark-image-section {
+
+    min-height:
+        520px;
+
+    background-size:
+        cover;
+
+    background-position:
+        center;
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+}
+
+
+.dark-image-section:before {
+
+    content:
+        '';
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,13,8,.9),
+            rgba(3,13,8,.38),
+            rgba(3,13,8,.2)
+        );
+
+}
+
+
+.dark-image-section .container {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+}
+
+
+.dark-image-copy {
+
+    max-width:
+        620px;
+
+}
+
+
+.dark-image-copy h2 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(50px,6vw,92px);
+
+    line-height:
+        .9;
+
+    margin:
+        18px 0;
+
+}
+
+
+.dark-image-copy h2 em {
+
+    color:
+        var(--lime);
+
+}
+
+
+.dark-image-copy p {
+
+    max-width:
+        500px;
+
+    color:
+        #cbd4cc;
+
+}
+
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.stats {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        20px;
+
+}
+
+
+.stat {
+
+    padding:
+        36px;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.stat strong {
+
+    display:
+        block;
+
+    color:
+        var(--lime);
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        55px;
+
+    line-height:
+        1;
+
+}
+
+
+.stat span {
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .12em;
+
+}
+
+
+
+/* =====================================================
+   STORY
+===================================================== */
+
+.story-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        70px;
+
+    align-items:
+        center;
+
+}
+
+
+.story-grid img {
+
+    height:
+        520px;
+
+    object-fit:
+        cover;
+
+}
+
+
+.story-copy p {
+
+    color:
+        var(--muted);
+
+    margin:
+        25px 0;
+
+    max-width:
+        560px;
+
+}
+
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.feature-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.feature-card {
+
+    background:
+        var(--card);
+
+    padding:
+        30px;
+
+    border:
+        1px solid var(--line);
+
+}
+
+
+.feature-icon {
+
+    color:
+        var(--lime);
+
+    font-size:
+        25px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.feature-card h3 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        25px;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.feature-card p {
+
+    font-size:
+        13px;
+
+    color:
+        var(--muted);
+
+}
+
+
+
+/* =====================================================
+   REVIEWS
+===================================================== */
+
+.reviews {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        16px;
+
+}
+
+
+.review {
+
+    padding:
+        28px;
+
+    background:
+        #0b1a13;
+
+    border:
+        1px solid var(--line);
+
+}
+
+
+.review p {
+
+    color:
+        #cdd5ce;
+
+    font-size:
+        14px;
+
+}
+
+
+.review strong {
+
+    display:
+        block;
+
+    margin-top:
+        18px;
+
+    color:
+        var(--lime);
+
+    font-size:
+        12px;
+
+}
+
+
+
+/* =====================================================
+   LIME CTA
+===================================================== */
+
+.lime-cta {
+
+    background:
+        var(--lime);
+
+    color:
+        #08120b;
+
+    padding:
+        80px 0;
+
+}
+
+
+.lime-cta-inner {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        40px;
+
+}
+
+
+.lime-cta h2 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(45px,6vw,86px);
+
+    line-height:
+        .9;
+
+}
+
+
+.dark-btn {
+
+    background:
+        #08120b;
+
+    color:
+        var(--lime);
+
+    border-color:
+        #08120b;
+
+}
+
+
+.dark-btn:hover {
+
+    color:
+        #08120b;
+
+    background:
+        transparent;
+
+    border-color:
+        #08120b;
+
+}
+
+
+
+/* =====================================================
+   SPLIT HERO
+   USED BY PLANT CARE + SHOP
+===================================================== */
+
+.split-hero {
+
+    min-height:
+        calc(100vh - 104px);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        50% 50%;
+
+    background:
+        var(--bg);
+
+    overflow:
+        hidden;
+
+}
+
+
+.split-hero-content {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    padding:
+        80px 7vw;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.split-hero h1 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(55px,6vw,92px);
+
+    line-height:
+        .86;
+
+    letter-spacing:
+        -.055em;
+
+    margin:
+        22px 0 30px;
+
+}
+
+
+.split-hero h1 em {
+
+    color:
+        var(--lime);
+
+    font-weight:
+        600;
+
+}
+
+
+.split-hero p {
+
+    max-width:
+        520px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        15px;
+
+}
+
+
+.split-hero-image {
+
+    min-height:
+        100%;
+
+    overflow:
+        hidden;
+
+    position:
+        relative;
+
+}
+
+
+.split-hero-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    min-height:
+        650px;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center;
+
+}
+
+
+.split-hero-image:after {
+
+    content:
+        '';
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(6,18,13,.22),
+            transparent 35%
+        );
+
+}
+
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.page-hero {
+
+    min-height:
+        600px;
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+
+}
+
+
+.page-hero-bg {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background-size:
+        cover;
+
+    background-position:
+        center;
+
+}
+
+
+.page-hero-bg:after {
+
+    content:
+        '';
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,14,9,.88),
+            rgba(4,14,9,.42),
+            rgba(4,14,9,.2)
+        );
+
+}
+
+
+.page-hero-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        750px;
+
+    padding:
+        90px 0;
+
+}
+
+
+.page-hero h1 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(55px,7vw,100px);
+
+    line-height:
+        .88;
+
+    letter-spacing:
+        -.055em;
+
+    margin:
+        20px 0;
+
+}
+
+
+.page-hero h1 em {
+
+    color:
+        var(--lime);
+
+}
+
+
+.page-hero p {
+
+    max-width:
+        530px;
+
+    color:
+        #d2d9d3;
+
+}
+
+
+.about-image {
+
+    height:
+        520px;
+
+    object-fit:
+        cover;
+
+}
+
+
+.mission-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.mission {
+
+    padding:
+        40px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--line);
+
+}
+
+
+.mission h3 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        30px;
+
+    color:
+        var(--lime);
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.mission p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+}
+
+
+
+/* =====================================================
+   PLANT CARE
+===================================================== */
+
+.care-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap:
+        18px;
+
+}
+
+
+.care-card {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--line);
+
+    padding:
+        30px;
+
+}
+
+
+.care-card.large {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        30px;
+
+    align-items:
+        center;
+
+}
+
+
+.care-card img {
+
+    height:
+        330px;
+
+    object-fit:
+        cover;
+
+}
+
+
+.care-card h3 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        34px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.care-card p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+}
+
+
+.care-list {
+
+    display:
+        grid;
+
+    gap:
+        18px;
+
+}
+
+
+.tip-card {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        120px 1fr;
+
+    gap:
+        18px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--line);
+
+    padding:
+        14px;
+
+}
+
+
+.tip-card img {
+
+    height:
+        105px;
+
+    object-fit:
+        cover;
+
+}
+
+
+.tip-card h4 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        20px;
+
+}
+
+
+.tip-card p {
+
+    font-size:
+        12px;
+
+    color:
+        var(--muted);
+
+}
+
+
+
+/* =====================================================
+   SHOP
+===================================================== */
+
+.shop-products {
+
+    padding-top:
+        90px;
+
+}
+
+
+.filter-bar {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+    flex-wrap:
+        wrap;
+
+    margin-bottom:
+        35px;
+
+}
+
+
+.filter-btn {
+
+    background:
+        transparent;
+
+    border:
+        1px solid var(--line);
+
+    color:
+        #cbd2cc;
+
+    padding:
+        10px 15px;
+
+    font-size:
+        12px;
+
+    cursor:
+        pointer;
+
+}
+
+
+.filter-btn.active,
+.filter-btn:hover {
+
+    background:
+        var(--lime);
+
+    border-color:
+        var(--lime);
+
+    color:
+        #08120b;
+
+}
+
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        70px;
+
+    align-items:
+        start;
+
+}
+
+
+.contact-details {
+
+    display:
+        grid;
+
+    gap:
+        28px;
+
+    margin-top:
+        35px;
+
+}
+
+
+.contact-detail span {
+
+    display:
+        block;
+
+    color:
+        var(--lime);
+
+    font-size:
+        11px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .16em;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.contact-detail p {
+
+    color:
+        var(--muted);
+
+}
+
+
+.contact-form {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--line);
+
+    padding:
+        34px;
+
+}
+
+
+.field {
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.field label {
+
+    display:
+        block;
+
+    font-size:
+        11px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .1em;
+
+    color:
+        #bac4bc;
+
+    margin-bottom:
+        7px;
+
+}
+
+
+.field input,
+.field textarea {
+
+    width:
+        100%;
+
+    border:
+        1px solid var(--line);
+
+    background:
+        #07150e;
+
+    color:
+        var(--cream);
+
+    padding:
+        13px 14px;
+
+    outline:
+        none;
+
+}
+
+
+.field input:focus,
+.field textarea:focus {
+
+    border-color:
+        var(--lime);
+
+}
+
+
+.field textarea {
+
+    min-height:
+        140px;
+
+    resize:
+        vertical;
+
+}
+
+
+.map-box {
+
+    margin-top:
+        60px;
+
+    min-height:
+        320px;
+
+    background:
+        linear-gradient(
+            rgba(6,18,13,.28),
+            rgba(6,18,13,.28)
+        ),
+        url('images/contact-bg.jpg')
+        center/cover;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid var(--line);
+
+}
+
+
+.map-box div {
+
+    background:
+        rgba(6,18,13,.9);
+
+    padding:
+        22px 30px;
+
+    text-align:
+        center;
+
+}
+
+
+.map-box strong {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        25px;
+
+}
+
+
+.map-box p {
+
+    font-size:
+        12px;
+
+    color:
+        var(--muted);
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer {
+
+    padding:
+        70px 0 25px;
+
+    background:
+        #030b07;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.footer-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.4fr 1fr 1fr 1fr;
+
+    gap:
+        35px;
+
+}
+
+
+.footer-brand p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    max-width:
+        330px;
+
+    margin-top:
+        15px;
+
+}
+
+
+.footer-col h4 {
+
+    color:
+        var(--lime);
+
+    font-size:
+        11px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .15em;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.footer-col a,
+.footer-col p {
+
+    display:
+        block;
+
+    color:
+        #aeb8b0;
+
+    font-size:
+        13px;
+
+    margin:
+        8px 0;
+
+}
+
+
+.copyright {
+
+    border-top:
+        1px solid var(--line);
+
+    margin-top:
+        45px;
+
+    padding-top:
+        18px;
+
+    color:
+        #68746c;
+
+    font-size:
+        11px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+}
+
+
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+.reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(24px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+.reveal.visible {
+
+    opacity:
+        1;
+
+    transform:
+        none;
+
+}
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width:1000px) {
+
+
+    .nav-links {
+
+        gap:
+            22px;
+
+    }
+
+
+    .product-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .story-grid,
+    .contact-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .feature-grid,
+    .reviews {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .care-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .split-hero {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .split-hero-content {
+
+        min-height:
+            58vh;
+
+        padding:
+            70px 7vw;
+
+    }
+
+
+    .split-hero-image {
+
+        height:
+            58vh;
+
+    }
+
+
+    .split-hero-image img {
+
+        min-height:
+            0;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:700px) {
+
+
+    .container {
+
+        width:
+            min(
+                100% - 36px,
+                var(--max)
+            );
+
+    }
+
+
+    .site-header {
+
+        height:
+            78px;
+
+    }
+
+
+    .logo {
+
+        font-size:
+            27px;
+
+    }
+
+
+    .nav-links {
+
+        position:
+            fixed;
+
+        inset:
+            78px 0 0;
+
+        background:
+            #06120d;
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        justify-content:
+            center;
+
+        gap:
+            28px;
+
+        transform:
+            translateX(100%);
+
+        transition:
+            .35s;
+
+        z-index:
+            999;
+
+    }
+
+
+    .nav-links.open {
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    .nav-links a {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .icon-btn {
+
+        display:
+            block;
+
+    }
+
+
+    .hero {
+
+        min-height:
+            calc(100svh - 78px);
+
+    }
+
+
+    .hero-content {
+
+        padding:
+            60px 0;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                52px,
+                15vw,
+                78px
+            );
+
+    }
+
+
+    .section {
+
+        padding:
+            75px 0;
+
+    }
+
+
+    .section-head {
+
+        display:
+            block;
+
+    }
+
+
+    .section-head p {
+
+        margin-top:
+            20px;
+
+    }
+
+
+    .product-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .product-card .pic {
+
+        height:
+            330px;
+
+    }
+
+
+    .stats,
+    .mission-grid,
+    .feature-grid,
+    .reviews {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .story-grid img,
+    .about-image {
+
+        height:
+            390px;
+
+    }
+
+
+    .page-hero {
+
+        min-height:
+            560px;
+
+    }
+
+
+    .page-hero-content {
+
+        padding:
+            70px 0;
+
+    }
+
+
+    .page-hero h1 {
+
+        font-size:
+            clamp(
+                52px,
+                14vw,
+                75px
+            );
+
+    }
+
+
+    /* SPLIT HERO MOBILE */
+
+    .split-hero-content {
+
+        min-height:
+            55vh;
+
+        padding:
+            65px 24px;
+
+    }
+
+
+    .split-hero h1 {
+
+        font-size:
+            clamp(
+                52px,
+                14vw,
+                78px
+            );
+
+    }
+
+
+    .split-hero-image {
+
+        height:
+            55vh;
+
+    }
+
+
+    .care-card.large {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .care-card img {
+
+        height:
+            280px;
+
+    }
+
+
+    .tip-card {
+
+        grid-template-columns:
+            95px 1fr;
+
+    }
+
+
+    .tip-card img {
+
+        height:
+            90px;
+
+    }
+
+
+    .contact-grid {
+
+        gap:
+            40px;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .copyright {
+
+        display:
+            block;
+
+    }
+
+
+    .copyright span {
+
+        display:
+            block;
+
+        margin-top:
+            7px;
+
+    }
+
+
+    .lime-cta-inner {
+
+        display:
+            block;
+
+    }
+
+
+    .lime-cta .btn {
+
+        margin-top:
+            25px;
+
+    }
+
+}
+/* =========================================================
+   PLANTORA — RESPONSIVE NAVBAR FIX
+   ========================================================= */
+
+/* Desktop */
+.site-header {
+    position: relative;
+    z-index: 9999;
+}
+
+.nav {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    display: inline-block;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+}
+
+.nav-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    display: none;
+}
+
+
+/* =========================================================
+   TABLET + MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        width: 100%;
+        position: relative;
+        z-index: 9999;
+    }
+
+    .site-header .container.nav {
+        width: 100%;
+        min-height: 68px;
+        padding: 0 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    /* Plantora logo */
+    .logo {
+        position: relative;
+        z-index: 10002;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    /* Hamburger area */
+    .nav-actions {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 10002;
+    }
+
+    .menu-btn {
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: none;
+        background: transparent;
+        color: #f5f5e8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        line-height: 1;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .menu-btn:focus {
+        outline: none;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+       ===================================================== */
+
+    .nav-links {
+        position: absolute;
+
+        /* Start directly below navbar */
+        top: 68px;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+        box-sizing: border-box;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 0;
+
+        padding: 8px 0 18px;
+
+        background: #06120c;
+
+        z-index: 10001;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    }
+
+
+    /* When JavaScript opens menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+
+    /* Every menu item */
+    .nav-links a {
+        width: 100%;
+        min-height: 52px;
+
+        padding: 14px 20px;
+        margin: 0;
+
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        font-size: 13px;
+        line-height: 1.2;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+
+        color: #eeeeE3;
+
+        text-decoration: none;
+
+        white-space: nowrap;
+    }
+
+
+    .nav-links a:hover {
+        color: #baff22;
+        background: rgba(186, 255, 34, 0.05);
+    }
+
+
+    /* Active/current page */
+    .nav-links a.active,
+    .nav-links a[aria-current="page"] {
+        color: #baff22;
+    }
+
+
+    /* Prevent page from creating horizontal scrolling */
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES — 360px / 375px / 390px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .site-header .container.nav {
+        min-height: 64px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .nav-links {
+        top: 64px;
+    }
+
+    .nav-links a {
+        min-height: 50px;
+        padding: 13px 15px;
+        font-size: 12px;
+        letter-spacing: 1.3px;
+    }
+
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .site-header .container.nav {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .nav-links a {
+        min-height: 48px;
+        font-size: 11px;
+        letter-spacing: 1.1px;
+    }
+}
+/* =========================================================
+   PLANTORA MOBILE MENU ONLY
+   DO NOT CHANGE DESKTOP DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Header */
+    .site-header {
+        position: relative;
+        z-index: 9999;
+    }
+
+    .site-header .nav {
+        position: relative;
+        min-height: 65px;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Plantora logo */
+    .site-header .logo {
+        display: block;
+        position: relative;
+        z-index: 10001;
+        text-decoration: none;
+    }
+
+    /* Hamburger */
+    .menu-btn {
+        display: flex !important;
+        width: 42px;
+        height: 42px;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 0;
+        margin: 0;
+
+        background: transparent;
+        border: none;
+        color: #ffffff;
+
+        font-size: 23px;
+        line-height: 1;
+
+        cursor: pointer;
+
+        position: relative;
+        z-index: 10002;
+    }
+
+
+    /* =====================================================
+       MOBILE NAVIGATION
+       ===================================================== */
+
+    .nav-links {
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        background: #06120c;
+
+        padding: 5px 0 12px;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0;
+
+        z-index: 10000;
+
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+
+    /*
+       IMPORTANT:
+       Your existing JavaScript can use any of these
+       common classes to open the menu.
+    */
+
+    .nav-links.active,
+    .nav-links.open,
+    .nav-links.show {
+        display: flex;
+    }
+
+
+    /* =====================================================
+       EVERY MENU ITEM
+       ===================================================== */
+
+    .nav-links a {
+        width: 100%;
+
+        height: 50px;
+        min-height: 50px;
+
+        padding: 0 15px;
+        margin: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        box-sizing: border-box;
+
+        color: #eeeeE3;
+
+        text-decoration: none;
+
+        font-size: 12px;
+        font-weight: 500;
+
+        letter-spacing: 1.5px;
+
+        text-transform: uppercase;
+
+        text-align: center;
+
+        white-space: nowrap;
+    }
+
+
+    /* Hover / active */
+    .nav-links a:hover {
+        color: #baff22;
+    }
+
+    .nav-links a.active {
+        color: #baff22;
+    }
+
+
+    /* =====================================================
+       IMPORTANT:
+       HOME MUST BE FIRST
+       ===================================================== */
+
+    .nav-links a:first-child {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+
+    /* Prevent horizontal overflow */
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 360px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .site-header .nav {
+        min-height: 64px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .nav-links {
+        top: 64px;
+    }
+
+    .nav-links a {
+        height: 48px;
+        min-height: 48px;
+
+        font-size: 11px;
+        letter-spacing: 1.3px;
+    }
+
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREEN
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .site-header .nav {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .nav-links a {
+        height: 47px;
+        min-height: 47px;
+
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+}
+/* =========================================================
+   PLANTORA — MOBILE / RESPONSIVE ONLY
+   DESKTOP DESIGN IS NOT CHANGED
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       1. MOBILE HEADER
+       ===================================================== */
+
+    .site-header {
+        position: relative;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    .site-header .nav {
+        position: relative;
+        width: 100%;
+        min-height: 64px;
+
+        padding: 0 14px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        box-sizing: border-box;
+    }
+
+    /* Logo */
+    .site-header .logo {
+        position: relative;
+        z-index: 10005;
+
+        margin: 0;
+        padding: 0;
+
+        line-height: 1;
+        text-decoration: none;
+    }
+
+
+    /* =====================================================
+       2. HAMBURGER
+       ===================================================== */
+
+    .menu-btn {
+        display: flex !important;
+
+        width: 40px;
+        height: 40px;
+
+        padding: 0;
+        margin: 0;
+
+        align-items: center;
+        justify-content: center;
+
+        background: transparent;
+        border: 0;
+        outline: none;
+
+        color: #ffffff;
+
+        font-size: 22px;
+        line-height: 1;
+
+        cursor: pointer;
+
+        position: relative;
+        z-index: 10006;
+    }
+
+
+    /* =====================================================
+       3. MOBILE MENU
+       ===================================================== */
+
+    .nav-links {
+        position: absolute;
+
+        top: 64px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 8px 0 12px;
+        margin: 0;
+
+        box-sizing: border-box;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 0;
+
+        background: #06120c;
+
+        z-index: 10004;
+
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+
+    /* IMPORTANT:
+       Your previous JS can add .active */
+    .nav-links.active {
+        display: flex;
+    }
+
+
+    /* =====================================================
+       4. PERFECT MENU ALIGNMENT
+       ===================================================== */
+
+    .nav-links a {
+        width: 100% !important;
+
+        height: 48px !important;
+        min-height: 48px !important;
+
+        padding: 0 10px !important;
+        margin: 0 !important;
+
+        box-sizing: border-box;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        color: #eeeeE3;
+
+        font-size: 11px;
+
+        font-weight: 500;
+
+        line-height: 1 !important;
+
+        letter-spacing: 1.3px;
+
+        text-transform: uppercase;
+
+        white-space: nowrap;
+    }
+
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: #baff22;
+    }
+
+
+    /* Make sure HOME is never hidden */
+    .nav-links a:first-child {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+
+    /* =====================================================
+       5. HERO — MOBILE LAYOUT
+       ===================================================== */
+
+    .hero {
+        position: relative;
+
+        width: 100%;
+        min-height: calc(100vh - 64px);
+
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+
+        box-sizing: border-box;
+    }
+
+
+    /* Hero image container */
+    .hero-media {
+        position: absolute;
+
+        left: 0;
+        right: 0;
+
+        bottom: 0;
+
+        width: 100%;
+        height: 58%;
+
+        z-index: 1;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        overflow: hidden;
+    }
+
+
+    .hero-media img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center bottom;
+
+        display: block;
+    }
+
+
+    /* =====================================================
+       6. HERO TEXT — MOVE UP
+       ===================================================== */
+
+    .hero-content {
+        position: relative;
+
+        z-index: 3;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 70px 20px 0;
+
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+
+    /* If your hero uses .hero-text instead */
+    .hero-text {
+        position: relative;
+
+        z-index: 3;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 70px 20px 0;
+
+        margin: 0;
+    }
+
+
+    /* =====================================================
+       7. HERO SMALL LABEL
+       ===================================================== */
+
+    .hero-content .eyebrow,
+    .hero-content .section-number,
+    .hero-text .eyebrow,
+    .hero-text .section-number {
+        margin-bottom: 12px;
+
+        font-size: 10px;
+
+        line-height: 1.2;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* =====================================================
+       8. HERO HEADING
+       ===================================================== */
+
+    .hero h1 {
+        position: relative;
+
+        z-index: 4;
+
+        width: 100%;
+
+        margin: 0;
+
+        font-size: clamp(43px, 12vw, 58px);
+
+        line-height: 0.88;
+
+        letter-spacing: -2px;
+
+        max-width: 330px;
+    }
+
+
+    /* Keep italic green part properly positioned */
+    .hero h1 em,
+    .hero h1 i {
+        display: inline;
+
+        line-height: 0.88;
+    }
+
+
+    /* =====================================================
+       9. HERO PARAGRAPH
+       ===================================================== */
+
+    .hero p {
+        position: relative;
+
+        z-index: 4;
+
+        max-width: 300px;
+
+        margin-top: 18px;
+        margin-bottom: 0;
+
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       10. HERO BUTTON
+       ===================================================== */
+
+    .hero .btn,
+    .hero .button,
+    .hero a.cta {
+        position: relative;
+
+        z-index: 5;
+
+        margin-top: 20px;
+
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* =====================================================
+       11. KEEP POT / PLANT BELOW HEADING
+       ===================================================== */
+
+    .hero-media {
+        pointer-events: none;
+    }
+
+
+    /* =====================================================
+       12. PREVENT OVERFLOW
+       ===================================================== */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+}
+
+
+/* =========================================================
+   360px MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .site-header .nav {
+        min-height: 62px;
+
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .nav-links {
+        top: 62px;
+    }
+
+
+    .nav-links a {
+        height: 46px !important;
+        min-height: 46px !important;
+
+        font-size: 10.5px;
+
+        letter-spacing: 1.2px;
+    }
+
+
+    .menu-btn {
+        width: 38px;
+        height: 38px;
+
+        font-size: 21px;
+    }
+
+
+    /* Hero */
+    .hero {
+        min-height: calc(100vh - 62px);
+    }
+
+
+    /* Move image/pot down */
+    .hero-media {
+        height: 55%;
+    }
+
+
+    /* Heading higher */
+    .hero-content,
+    .hero-text {
+        padding-top: 62px;
+    }
+
+
+    .hero h1 {
+        font-size: 46px;
+
+        line-height: 0.86;
+
+        letter-spacing: -1.8px;
+
+        max-width: 310px;
+    }
+
+
+    .hero p {
+        max-width: 285px;
+
+        font-size: 12px;
+
+        line-height: 1.45;
+
+        margin-top: 16px;
+    }
+}
+
+
+/* =========================================================
+   360px AND BELOW
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .site-header .nav {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .nav-links a {
+        height: 45px !important;
+        min-height: 45px !important;
+
+        font-size: 10px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .hero-content,
+    .hero-text {
+        padding-left: 16px;
+        padding-right: 16px;
+
+        padding-top: 55px;
+    }
+
+
+    .hero h1 {
+        font-size: 42px;
+
+        line-height: 0.87;
+
+        max-width: 295px;
+    }
+
+
+    .hero p {
+        max-width: 270px;
+
+        font-size: 11.5px;
+    }
+
+
+    .hero-media {
+        height: 53%;
+    }
+}
+/* TWO IMAGE PLANT SECTION */
+
+.plant-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+    background: #07150e;
+}
+
+.plant-feature-content {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.plant-feature-content h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 70px;
+    line-height: .9;
+    margin: 15px 0 25px;
+}
+
+.plant-feature-content h2 em {
+    color: #baff22;
+}
+
+.plant-feature-content > p:not(.kicker) {
+    max-width: 430px;
+    line-height: 1.7;
+    opacity: .7;
+    margin-bottom: 25px;
+}
+
+.plant-feature-image {
+    height: 520px;
+}
+
+.plant-feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* ABOUT WHY CHOOSE US */
+
+.about-why {
+    padding: 90px 6%;
+}
+
+.about-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.why-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,.08);
+}
+
+.why-benefits article {
+    background: #07150e;
+    padding: 28px;
+    min-height: 170px;
+}
+
+.why-benefits article > span {
+    color: #baff22;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.why-benefits h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    margin: 18px 0 10px;
+}
+
+.why-benefits p {
+    font-size: 12px;
+    line-height: 1.6;
+    opacity: .65;
+    margin: 0;
+}
+
+.why-care-image {
+    height: 500px;
+    overflow: hidden;
+}
+
+.why-care-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* =====================================================
+   HOME — TRENDY PLANTS
+===================================================== */
+
+.home-trendy {
+    background: #06140e;
+    color: #f4f1df;
+    padding: 100px 6%;
+}
+
+.section-label {
+    color: #b7ff19;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.section-heading-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.home-trendy h2,
+.home-selling h2,
+.home-reviews h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 5vw, 76px);
+    line-height: .95;
+    font-weight: 400;
+    margin: 0;
+}
+
+.home-trendy h2 span,
+.home-selling h2 span,
+.home-reviews h2 span {
+    color: #b7ff19;
+    font-style: italic;
+}
+
+.section-description {
+    max-width: 470px;
+    color: #9ba79f;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 30px 0 55px;
+}
+
+.small-link {
+    color: #f4f1df;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #465149;
+    padding-bottom: 8px;
+}
+
+.trendy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.trendy-card {
+    background: #091a13;
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.trendy-image {
+    height: 390px;
+    overflow: hidden;
+}
+
+.trendy-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+}
+
+.trendy-card:hover img {
+    transform: scale(1.04);
+}
+
+.trendy-info {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 20px;
+}
+
+.trendy-info h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    margin: 0 0 6px;
+}
+
+.trendy-info p {
+    color: #87958d;
+    font-size: 12px;
+    margin: 0;
+}
+
+.trendy-info strong {
+    color: #b7ff19;
+    font-size: 13px;
+}
+
+.trendy-info a {
+    color: #b7ff19;
+    font-size: 10px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   HOME — TOP SELLING
+===================================================== */
+
+.home-selling {
+    background: #06140e;
+    color: #f4f1df;
+    padding: 100px 6%;
+    border-top: 1px solid rgba(255,255,255,.05);
+}
+
+.selling-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.selling-header .section-label {
+    text-align: center;
+}
+
+.selling-header h2 {
+    font-size: clamp(35px, 4vw, 58px);
+}
+
+.selling-header .small-link {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}
+
+.selling-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+
+.selling-card {
+    background: #091a13;
+    border: 1px solid rgba(255,255,255,.07);
+    padding-bottom: 16px;
+}
+
+.selling-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.selling-card h3 {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    margin: 13px 12px 5px;
+}
+
+.selling-card p {
+    color: #b7ff19;
+    font-size: 11px;
+    margin: 0 12px;
+}
+
+
+/* =====================================================
+   HOME — REVIEWS
+===================================================== */
+
+.home-reviews {
+    background: #06140e;
+    color: #f4f1df;
+    padding: 110px 6%;
+    border-top: 1px solid rgba(255,255,255,.05);
+}
+
+.reviews-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.review-card {
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 35px;
+    min-height: 280px;
+    background: rgba(7,25,17,.55);
+}
+
+.stars {
+    color: #b7ff19;
+    letter-spacing: 4px;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.review-card p {
+    color: #adb7b0;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.review-person {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.review-person strong {
+    font-size: 14px;
+}
+
+.review-person span {
+    color: #77857d;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   HOME — FINAL BANNER
+===================================================== */
+
+.home-final-banner {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    padding: 80px 6%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,15,10,.94) 0%,
+            rgba(3,15,10,.72) 45%,
+            rgba(3,15,10,.25) 100%
+        ),
+        url("images/about-vision.jpg") center/cover no-repeat;
+}
+
+.final-banner-content {
+    max-width: 600px;
+}
+
+.final-banner-content h2 {
+    color: #f4f1df;
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: .95;
+    font-weight: 400;
+    margin: 0 0 25px;
+}
+
+.final-banner-content h2 span {
+    color: #b7ff19;
+    font-style: italic;
+}
+
+.final-banner-content p {
+    color: #c1c9c3;
+    max-width: 420px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.lime-button {
+    display: inline-block;
+    background: #b7ff19;
+    color: #07120d;
+    padding: 16px 25px;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+/* =====================================================
+   CONTACT — MAP SECTION
+===================================================== */
+
+.contact-map-section {
+    background: #06140e;
+    color: #f4f1df;
+    padding: 80px 6% 100px;
+}
+
+.contact-map-header {
+    margin-bottom: 40px;
+}
+
+.contact-map-header .section-label {
+    color: #b7ff19;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.contact-map-header h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: .95;
+    font-weight: 400;
+    margin: 0 0 20px;
+}
+
+.contact-map-header h2 span {
+    color: #b7ff19;
+    font-style: italic;
+}
+
+.contact-map-header p {
+    max-width: 500px;
+    color: #9da9a2;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.contact-map {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.10);
+    background: #091a13;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: grayscale(25%) contrast(95%);
+}
+
+
+/* =====================================================
+   MAP — MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .contact-map-section {
+        padding: 60px 20px 70px;
+    }
+
+    .contact-map-header {
+        margin-bottom: 28px;
+    }
+
+    .contact-map-header h2 {
+        font-size: 44px;
+    }
+
+    .contact-map-header p {
+        font-size: 14px;
+    }
+
+    .contact-map {
+        height: 330px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .contact-map-section {
+        padding: 50px 18px 60px;
+    }
+
+    .contact-map-header h2 {
+        font-size: 38px;
+    }
+
+    .contact-map {
+        height: 280px;
+    }
+}
+/* =========================================================
+   PLANTORA — MOBILE RESPONSIVE FIX
+   RESPONSIVE ONLY — DESKTOP IS NOT AFFECTED
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------
+       GENERAL MOBILE SECTION
+    ----------------------------------------- */
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------
+       SECTION HEADINGS
+    ----------------------------------------- */
+
+    .section-heading,
+    .section-head,
+    .section-title {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 25px;
+    }
+
+    .section-heading h2,
+    .section-head h2,
+    .section-title h2 {
+        font-size: 34px;
+        line-height: 1;
+        margin: 0;
+    }
+
+
+    /* -----------------------------------------
+       HEADING + VIEW ALL
+    ----------------------------------------- */
+
+    .section-header,
+    .heading-row,
+    .section-top,
+    .products-header,
+    .reviews-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .section-header h2,
+    .heading-row h2,
+    .section-top h2,
+    .products-header h2,
+    .reviews-header h2 {
+        margin: 0;
+        flex: 1;
+    }
+
+    .view-all,
+    .view-link,
+    .read-all {
+        flex-shrink: 0;
+        white-space: nowrap;
+        font-size: 9px;
+        margin-bottom: 3px;
+    }
+
+
+    /* -----------------------------------------
+       TRENDY PLANTS
+    ----------------------------------------- */
+
+    .product-grid,
+    .products-grid,
+    .trending-grid,
+    .plant-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .product-card,
+    .plant-card,
+    .trending-card {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .product-card img,
+    .plant-card img,
+    .trending-card img {
+        width: 100%;
+        height: 155px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .product-card h3,
+    .plant-card h3,
+    .trending-card h3 {
+        font-size: 15px;
+        line-height: 1.2;
+        word-break: normal;
+    }
+
+
+    /* -----------------------------------------
+       TOP SELLING
+    ----------------------------------------- */
+
+    .selling-grid,
+    .top-selling-grid,
+    .featured-products,
+    .favourites-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .selling-grid .product-card,
+    .top-selling-grid .product-card,
+    .featured-products .product-card,
+    .favourites-grid .product-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* -----------------------------------------
+       CUSTOMER REVIEWS
+    ----------------------------------------- */
+
+    .reviews-grid,
+    .review-grid,
+    .customer-reviews {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .review-card,
+    .customer-review,
+    .reviews-grid > *,
+    .review-grid > * {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .review-card {
+        min-height: auto;
+        padding: 24px 20px;
+    }
+
+    .review-card p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------
+       REMOVE HORIZONTAL PAGE OVERFLOW
+    ----------------------------------------- */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .hero {
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+        box-sizing: border-box;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        line-height: .9;
+        max-width: 330px;
+    }
+
+    .hero p {
+        max-width: 300px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* -----------------------------------------
+       LARGE IMAGE SECTIONS
+    ----------------------------------------- */
+
+    .image-section,
+    .dark-image-section,
+    .plant-care-section {
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .image-section img,
+    .dark-image-section img,
+    .plant-care-section img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+
+    /* -----------------------------------------
+       TEXT + IMAGE TWO COLUMN SECTIONS
+    ----------------------------------------- */
+
+    .split-section,
+    .two-column,
+    .content-image,
+    .image-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 25px;
+        box-sizing: border-box;
+    }
+
+    .split-section > *,
+    .two-column > *,
+    .content-image > *,
+    .image-content > * {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------
+       STATS
+    ----------------------------------------- */
+
+    .stats,
+    .stats-grid,
+    .numbers-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        width: 100%;
+    }
+
+    .stats > *,
+    .stats-grid > *,
+    .numbers-grid > * {
+        min-width: 0;
+    }
+
+
+    /* -----------------------------------------
+       WHY CHOOSE US
+    ----------------------------------------- */
+
+    .why-grid,
+    .features-grid,
+    .choose-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 0;
+    }
+
+    .why-card,
+    .feature-card,
+    .choose-card {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    footer,
+    .site-footer {
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .section-header,
+    .heading-row,
+    .section-top,
+    .products-header,
+    .reviews-header {
+        align-items: flex-end;
+        gap: 8px;
+    }
+
+    .section-header h2,
+    .heading-row h2,
+    .section-top h2,
+    .products-header h2,
+    .reviews-header h2 {
+        font-size: 30px;
+    }
+
+    .view-all,
+    .view-link,
+    .read-all {
+        font-size: 8px;
+    }
+
+    .product-grid,
+    .products-grid,
+    .trending-grid,
+    .plant-grid,
+    .selling-grid,
+    .top-selling-grid,
+    .featured-products,
+    .favourites-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .product-card img,
+    .plant-card img,
+    .trending-card img {
+        height: 130px;
+    }
+
+    .product-card h3,
+    .plant-card h3,
+    .trending-card h3 {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .stats,
+    .stats-grid,
+    .numbers-grid {
+        gap: 5px;
+    }
+}
+/* =========================================================
+   PLANTORA HOME — MOBILE TRENDY PLANTS FIX
+   MOBILE ONLY — DO NOT AFFECT DESKTOP
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Stop the section from creating horizontal overflow */
+    .trendy-plants,
+    .our-plants,
+    .plant-collection,
+    .products-section,
+    .collection-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Main product/card row */
+    .trendy-plants .products,
+    .trendy-plants .product-grid,
+    .trendy-plants .products-grid,
+    .trendy-plants .plant-grid,
+    .our-plants .products,
+    .our-plants .product-grid,
+    .our-plants .products-grid,
+    .plant-collection .products,
+    .plant-collection .product-grid,
+    .products-section .products,
+    .products-section .product-grid,
+    .collection-section .products,
+    .collection-section .product-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Individual cards */
+    .trendy-plants .product-card,
+    .trendy-plants .plant-card,
+    .our-plants .product-card,
+    .our-plants .plant-card,
+    .plant-collection .product-card,
+    .plant-collection .plant-card,
+    .products-section .product-card,
+    .collection-section .product-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        flex: none !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    /* Product images */
+    .trendy-plants .product-card img,
+    .trendy-plants .plant-card img,
+    .our-plants .product-card img,
+    .our-plants .plant-card img,
+    .plant-collection .product-card img,
+    .plant-collection .plant-card img,
+    .products-section .product-card img,
+    .collection-section .product-card img {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 145px !important;
+        object-fit: cover !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Card information */
+    .trendy-plants .product-info,
+    .trendy-plants .card-content,
+    .our-plants .product-info,
+    .our-plants .card-content,
+    .plant-collection .product-info,
+    .plant-collection .card-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        padding: 12px !important;
+    }
+
+    /* Product names */
+    .trendy-plants .product-card h3,
+    .trendy-plants .plant-card h3,
+    .our-plants .product-card h3,
+    .our-plants .plant-card h3 {
+        font-size: 14px !important;
+        line-height: 1.25 !important;
+        margin: 0 0 7px !important;
+        word-break: normal !important;
+    }
+
+    /* Description */
+    .trendy-plants .product-card p,
+    .trendy-plants .plant-card p,
+    .our-plants .product-card p,
+    .our-plants .plant-card p {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+        margin: 0 !important;
+    }
+
+    /* Price + View button */
+    .trendy-plants .product-bottom,
+    .trendy-plants .card-bottom,
+    .our-plants .product-bottom,
+    .our-plants .card-bottom {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .trendy-plants .product-bottom a,
+    .trendy-plants .card-bottom a,
+    .our-plants .product-bottom a,
+    .our-plants .card-bottom a {
+        font-size: 8px !important;
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       HEADING OF TRENDY PLANTS
+    ===================================================== */
+
+    .trendy-plants .section-header,
+    .trendy-plants .heading-row,
+    .trendy-plants .section-top,
+    .our-plants .section-header,
+    .our-plants .heading-row {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        align-items: flex-end !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .trendy-plants .section-header h2,
+    .trendy-plants .heading-row h2,
+    .trendy-plants .section-top h2,
+    .our-plants .section-header h2,
+    .our-plants .heading-row h2 {
+        min-width: 0 !important;
+        flex: 1 !important;
+        margin: 0 !important;
+        font-size: 32px !important;
+        line-height: .95 !important;
+    }
+
+    .trendy-plants .view-all,
+    .trendy-plants .view-link,
+    .our-plants .view-all,
+    .our-plants .view-link {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        font-size: 8px !important;
+    }
+}
+
+
+/* =========================================================
+   EXTRA FIX FOR 360px MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .trendy-plants .products,
+    .trendy-plants .product-grid,
+    .trendy-plants .products-grid,
+    .trendy-plants .plant-grid,
+    .our-plants .products,
+    .our-plants .product-grid,
+    .our-plants .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .trendy-plants .product-card,
+    .trendy-plants .plant-card,
+    .our-plants .product-card,
+    .our-plants .plant-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+
+    .trendy-plants .product-card img,
+    .trendy-plants .plant-card img,
+    .our-plants .product-card img,
+    .our-plants .plant-card img {
+        height: 125px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+}
+/* =========================================================
+   MOBILE RESPONSIVE FINAL FIX
+   HOME + ABOUT + SHOP
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       1. HOME PAGE — TRENDY PLANTS
+       Fix second card getting cut off
+    ===================================================== */
+
+    .trendy-plants,
+    .trendy-plants-section,
+    .our-plants,
+    .plants-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .trendy-plants .plant-cards,
+    .trendy-plants .plants-grid,
+    .trendy-plants .product-grid,
+    .trendy-plants .products,
+    .trendy-plants-section .plant-cards,
+    .trendy-plants-section .plants-grid,
+    .our-plants .plant-cards,
+    .our-plants .plants-grid,
+    .plants-section .plant-cards {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 10px !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .trendy-plants .plant-card,
+    .trendy-plants .product-card,
+    .trendy-plants-section .plant-card,
+    .trendy-plants-section .product-card,
+    .our-plants .plant-card,
+    .our-plants .product-card,
+    .plants-section .plant-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        flex: none !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .trendy-plants .plant-card img,
+    .trendy-plants .product-card img,
+    .trendy-plants-section .plant-card img,
+    .trendy-plants-section .product-card img,
+    .our-plants .plant-card img,
+    .our-plants .product-card img,
+    .plants-section .plant-card img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 145px !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+
+    /* =====================================================
+       2. ABOUT PAGE — STATISTICS
+       Fix 5+ / 10K / 500+ getting cut
+    ===================================================== */
+
+    .stats,
+    .statistics,
+    .about-stats,
+    .stats-section,
+    .about-page .stats,
+    .about-page .statistics {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .stats > *,
+    .statistics > *,
+    .about-stats > *,
+    .stats-section > *,
+    .about-page .stats > *,
+    .about-page .statistics > * {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .stats h2,
+    .statistics h2,
+    .about-stats h2,
+    .stats-section h2 {
+        font-size: 34px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+        margin: 0 !important;
+        letter-spacing: -1px !important;
+    }
+
+    .stats p,
+    .statistics p,
+    .about-stats p,
+    .stats-section p {
+        font-size: 8px !important;
+        line-height: 1.4 !important;
+        margin: 5px 0 0 !important;
+        white-space: normal !important;
+    }
+
+
+    /* =====================================================
+       3. SHOP PAGE — PRODUCT IMAGE
+       Remove huge blank space below image
+    ===================================================== */
+
+    .shop-products,
+    .shop-grid,
+    .products-grid,
+    .shop-page .products,
+    .shop-page .product-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .shop-products .product-card,
+    .shop-grid .product-card,
+    .products-grid .product-card,
+    .shop-page .product-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .shop-products .product-card .product-image,
+    .shop-grid .product-card .product-image,
+    .products-grid .product-card .product-image,
+    .shop-page .product-card .product-image {
+        height: 190px !important;
+        min-height: 0 !important;
+        max-height: 190px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        box-sizing: border-box !important;
+    }
+
+    .shop-products .product-card .product-image img,
+    .shop-grid .product-card .product-image img,
+    .products-grid .product-card .product-image img,
+    .shop-page .product-card .product-image img {
+        width: 100% !important;
+        height: 190px !important;
+        min-height: 0 !important;
+        max-height: 190px !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /* =====================================================
+       SHOP — PRODUCT CONTENT
+       Keep content directly below image
+    ===================================================== */
+
+    .shop-products .product-info,
+    .shop-grid .product-info,
+    .products-grid .product-info,
+    .shop-page .product-info,
+    .shop-products .product-content,
+    .shop-grid .product-content,
+    .products-grid .product-content,
+    .shop-page .product-content {
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 12px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE — 360px
+========================================================= */
+
+@media (max-width: 400px) {
+
+    /* HOME */
+    .trendy-plants .plant-cards,
+    .trendy-plants .plants-grid,
+    .trendy-plants .product-grid,
+    .trendy-plants-section .plant-cards,
+    .our-plants .plant-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .trendy-plants .plant-card,
+    .trendy-plants .product-card,
+    .trendy-plants-section .plant-card,
+    .our-plants .plant-card {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+
+    .trendy-plants .plant-card img,
+    .trendy-plants .product-card img,
+    .trendy-plants-section .plant-card img,
+    .our-plants .plant-card img {
+        height: 130px !important;
+    }
+
+
+    /* ABOUT */
+    .stats,
+    .statistics,
+    .about-stats,
+    .stats-section {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 4px !important;
+    }
+
+    .stats h2,
+    .statistics h2,
+    .about-stats h2,
+    .stats-section h2 {
+        font-size: 27px !important;
+        letter-spacing: -1.5px !important;
+    }
+
+
+    /* SHOP */
+    .shop-products .product-card .product-image,
+    .shop-grid .product-card .product-image,
+    .products-grid .product-card .product-image,
+    .shop-page .product-card .product-image {
+        height: 170px !important;
+        max-height: 170px !important;
+    }
+
+    .shop-products .product-card .product-image img,
+    .shop-grid .product-card .product-image img,
+    .products-grid .product-card .product-image img,
+    .shop-page .product-card .product-image img {
+        height: 170px !important;
+        max-height: 170px !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+    }
+}
+/* =========================================================
+   FINAL MOBILE FIX
+   HOME + ABOUT + SHOP
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       1. HOME — OUR TRENDY PLANTS
+       Fix second card getting cut
+    ===================================================== */
+
+    .home-trendy {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .home-trendy .section-heading-row {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        gap: 10px;
+    }
+
+    .home-trendy .section-heading-row h2 {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .home-trendy .small-link {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .home-trendy .section-description {
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .home-trendy .trendy-grid {
+        width: 100%;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .home-trendy .trendy-card {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .home-trendy .trendy-image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .home-trendy .trendy-image img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    .home-trendy .trendy-info {
+        width: 100%;
+        min-width: 0;
+        padding: 12px;
+        grid-template-columns: 1fr auto;
+        gap: 5px;
+        box-sizing: border-box;
+    }
+
+    .home-trendy .trendy-info > div {
+        min-width: 0;
+    }
+
+    .home-trendy .trendy-info h3 {
+        font-size: 15px;
+        line-height: 1.2;
+    }
+
+    .home-trendy .trendy-info p {
+        font-size: 9px;
+        line-height: 1.4;
+    }
+
+    .home-trendy .trendy-info strong {
+        font-size: 11px;
+    }
+
+    .home-trendy .trendy-info a {
+        font-size: 8px;
+        grid-column: 2;
+    }
+
+
+    /* =====================================================
+       2. ABOUT — STATISTICS
+       Fix 5+ / 10K+ / 500+ getting cut
+    ===================================================== */
+
+    .stats {
+        width: 100%;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 4px;
+        box-sizing: border-box;
+        overflow: visible;
+    }
+
+    .stats .stat {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        padding: 22px 3px;
+        box-sizing: border-box;
+        overflow: visible;
+    }
+
+    .stats .stat strong {
+        display: block;
+        width: 100%;
+        font-size: clamp(28px, 9vw, 38px);
+        line-height: 1;
+        letter-spacing: -1.5px;
+        white-space: nowrap;
+    }
+
+    .stats .stat span {
+        display: block;
+        width: 100%;
+        margin-top: 7px;
+        font-size: 8px;
+        line-height: 1.4;
+        letter-spacing: .08em;
+        white-space: normal;
+    }
+
+
+    /* =====================================================
+       3. SHOP — PRODUCT CARDS
+       Remove blank space between image and information
+    ===================================================== */
+
+    .shop-products .product-grid {
+        width: 100%;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        box-sizing: border-box;
+    }
+
+    .shop-products .product-card {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        height: auto;
+        min-height: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    /* IMPORTANT:
+       Your HTML uses .pic, NOT .product-image
+    */
+
+    .shop-products .product-card .pic {
+        width: 100%;
+        height: 180px;
+        min-height: 0;
+        max-height: 180px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background: #f3f1e8;
+        box-sizing: border-box;
+    }
+
+    .shop-products .product-card .pic img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        box-sizing: border-box;
+    }
+
+    .shop-products .product-card .product-info {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .shop-products .product-card .product-info h3 {
+        margin: 0 0 5px;
+        font-size: 13px;
+        line-height: 1.2;
+    }
+
+    .shop-products .product-card .product-info p {
+        margin: 0 0 8px;
+        font-size: 9px;
+        line-height: 1.3;
+    }
+
+    .shop-products .product-card .price-row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        box-sizing: border-box;
+    }
+
+    .shop-products .product-card .price {
+        font-size: 11px;
+    }
+
+    .shop-products .product-card .small-btn {
+        padding: 6px 7px;
+        font-size: 8px;
+        white-space: nowrap;
+    }
+}
+
+
+/* =========================================================
+   EXTRA FIX FOR 360px SCREEN
+========================================================= */
+
+@media (max-width: 400px) {
+
+    /* HOME */
+
+    .home-trendy {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .home-trendy .trendy-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .home-trendy .trendy-image {
+        height: 250px;
+    }
+
+    .home-trendy .trendy-info {
+        padding: 10px;
+    }
+
+
+    /* ABOUT */
+
+    .stats {
+        gap: 2px;
+    }
+
+    .stats .stat {
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    .stats .stat strong {
+        font-size: 27px;
+        letter-spacing: -1.5px;
+    }
+
+    .stats .stat span {
+        font-size: 7px;
+    }
+
+
+    /* SHOP */
+
+    .shop-products .product-grid {
+        gap: 7px;
+    }
+
+    .shop-products .product-card .pic {
+        height: 165px;
+        max-height: 165px;
+    }
+
+    .shop-products .product-card .product-info {
+        padding: 9px;
+    }
+
+    .shop-products .product-card .product-info h3 {
+        font-size: 12px;
+    }
+
+    .shop-products .product-card .product-info p {
+        font-size: 8px;
+    }
+
+    .shop-products .product-card .small-btn {
+        padding: 5px 6px;
+        font-size: 7px;
+    }
+}
